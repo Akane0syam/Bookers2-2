@@ -15,5 +15,6 @@ def get_profile_image(width, height)
     end
     profile_image.variant(resize_to_limit: [width, height]).processed
 end
+has_many :books, dependent: :destroy
 
 end
