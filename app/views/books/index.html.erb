@@ -10,3 +10,13 @@
 
     <%= f.submit 'Create Book' %>
   <% end %>
+
+<% @books.each do |book| %>
+<div>
+  <%= image_tag book.get_image %>
+  <p><%= image_tag 'no_image.jpg' %></p>
+  <p>Title：<%= book.title %></p>
+  <p>Opinion：<%= book.body %></p>
+
+</div>
+<% end %>
