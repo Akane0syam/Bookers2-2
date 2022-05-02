@@ -1,17 +1,15 @@
-<div>
-  <h2>User info</h2>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <table class = "table">
-    <tr>
-      <th>name</th>
-      <th><%= @user.name %></th>
-    </tr>
-
-    <tr>
-      <th>introduction</th>
-    </tr>
-
-  </table>
-
-</div>
-
+<h2>Users</h2>
+<thed>
+  <th>image</th>
+  <th>name</th>
+  <th colspan="3"></th>
+</thed>
+<tbody>
+  <% @users.each do |user| %>
+	  <tr>
+	    <td><%= image_tag @user.get_profile_image(100,100) %></td>
+	  	<td><%= @user.name %></td>
+	  	<td><%= link_to "Show", "edit_user_path(@user)" %></td>
+	  </tr>
+  <% end %>
+</tbody>

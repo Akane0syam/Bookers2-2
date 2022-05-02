@@ -1,9 +1,7 @@
-
-<h1>New book</h1>
+<h2>New book</h2>
   <%= form_with model: @book do |f| %>
     <h4>title</h4>
       <%= f.text_field :title%>
-      <br>
     <h4>Opinion</h4>
       <%= f.text_area :body %>
 
@@ -12,12 +10,20 @@
     <%= f.submit 'Create Book' %>
   <% end %>
 
+
 <h2>Books</h2>
-<% @books.each do |book| %>
+<%  @books.each do |book| %>
 <div>
-  <%= image_tag book %>
-  <p><%= image_tag 'no_image.jpg' %></p>
-  <p>Title：<%= book.title %></p>
+
+
+  <p>
+    <% if book.user.profile_image.attached? %>
+      <%= image_tag book.user.profile_image, size: "100x100" %>
+    <% else %>
+      <%= image_tag 'no_image', size: "100x100" %>
+    <% end %>
+  </p>
+  <p>Title：<%=link_to book.title, book_path(book.id) %></p>
   <p>Opinion：<%= book.body %></p>
 
 </div>
