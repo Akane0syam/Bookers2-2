@@ -15,7 +15,7 @@
   <body>
     <header>
       <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Bookers</a>
+      <a class="navbar-brand" href="/">Bookers</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,36 +24,29 @@
           <% if user_signed_in? %>
             <li class="nav-item active">
               <a class="nav-link" href="/books">Home</a>
-              <%= link_to"Home", "/books" %>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/users/:id">Users</a>
+              <a class="nav-link" href="/users">Users</a>
               <%= link_to 'Users', user_path(current_user.id) %>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/books">Books</a>
-              <%= link_to "Books", books_path %>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/users/sign_out">Log out</a>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+              <a class="nav-link" href= "/users/sign_out">Log out</a>
             </li>
           <% else %>
             <li class="nav-item active">
               <a class="nav-link" href="/">Home</a>
-              <%= link_to "Home",top_path %>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/homes/about">About</a>
-              <%= link_to "About", about_path %>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/users/sign_up">Sign up</a>
-              <%= link_to "Sign up", new_user_registration_path %>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/users/sign_in">Log in</a>
-              <%= link_to "Log in", new_user_session_path %>
             </li>
           <% end %>
         </ul>

@@ -1,5 +1,7 @@
 <h1>Editing Book</h1>
-  <div class="form-group">
+<%= form_with model: @book do |f| %>
+
+  <div class="field">
     <label for="book_title">Title</label>
     <input class="form-control book_title" type="text" value="title" name="book[title]" id="book_title">
   </div>
@@ -11,9 +13,10 @@
     <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
   </div>
 </form>
-  		<a class="book_5223" href="/books/5223">Show</a> |
-  		<a class="back" href="/books">Back</a>
-  </div>
-</div>
-      </div>
-      </main>
+
+
+<%= link_to 'Back', books_path %>
+
+
+<%= link_to 'Show', @book %> |
+<%= link_to 'Back', books_path %>
