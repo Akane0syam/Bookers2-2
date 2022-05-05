@@ -15,52 +15,46 @@
   <body>
     <header>
       <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Bookers</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="d-flex justify-content-end collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <% if user_signed_in? %>
-            <li class="nav-item active">
-              <a class="nav-link" href="/books">Home</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/users">Users</a>
-              <%= link_to 'Users', user_path(current_user.id) %>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/books">Books</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href= "/users/sign_out">Log out</a>
-            </li>
-          <% else %>
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/homes/about">About</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/users/sign_up">Sign up</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/users/sign_in">Log in</a>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+        <a class="navbar-brand" href="/">Bookers</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="d-flex justify-content-end collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <% if user_signed_in? %>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/books">Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/users">Users</a>
+                  <%= link_to 'Users', user_path(current_user.id) %>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/books">Books</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href= "/users/sign_out">Log out</a>
+                </li>
+              <% else %>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/homes/about">About</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/users/sign_up">Sign up</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/users/sign_in">Log in</a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+      </nav>
     </header>
-    <%= yield %>
-    <footer>
-  <div class="container mt-5">
-  	<div class="row">
-    	<div class="mx-auto">
-    		<p>CopyRight Infratop.inc</p>
-    	</div>
-    </div>
-  </div>
-</footer>
+      <%= yield %>
   </body>
+
 </html>
+
