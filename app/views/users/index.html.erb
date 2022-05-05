@@ -1,26 +1,62 @@
-<p id="notice"><%= notice %></p>
-<div class="col-lg-4" style="background-color: rgb(255, 255, 255);">
+<div class="container">
+  <div class="row">
 
-    <h2>User info</h2>
-    <table class="table table-striped">
+    <div class="col-lg-3" >
+     <h2>User info</h2>
+      <table class="table table-striped">
         <thead>
+          <% @users.each do |user| %>
+            	<%= image_tag @user.get_profile_image(100,100) %>
+          <% end %>
           <tr>
             <th>name</th>
+          	<th><%= @user.name %></th>
+          </tr>
+          <tr>
             <th>introduction</th>
+            <th><%= @user.introduction %></th>
+          </tr>
+          <div class="row">
+            <%= link_to "user_edit", edit_user_path(@user) %>
+          </div>
+        </thead>
+      </table>
+
+      <h2>New book</h2>
+        <%= form_with model: @book do |f| %>
+          <h4>title</h4>
+            <%= f.text_field :title%>
+          <h4>Opinion</h4>
+            <%= f.text_area :body %>
+
+            <br>
+
+          <%= f.submit 'Create Book' %>
+        <% end %>
+    </div>
+
+    <div class="col-lg-8">
+      <h2>Users</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>name</th>
             <th></th>
           </tr>
         </thead>
-    </table>
-      <tbody>
-        <% @users.each do |user| %>
-          	<tr>
-          	 <td><%= image_tag @user.get_profile_image(100,100) %></td>
-          	 <br>
-          	 <td><%= @user.name %></td>
-          	</tr>
-        <% end %>
-      </tbody>
-</div>
-      <div class="col-lg-8">
-
-      </div>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td>
+              <% @users.each do |user| %>
+            	  <%= image_tag @user.get_profile_image(100,100) %>
+              <% end %>
+            </td>
+            <td><%= @user.name %></td>
+            <td><%= link_to 'Show', user %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>

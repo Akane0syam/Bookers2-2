@@ -1,5 +1,5 @@
 <h1>User info</h1>
-<%= form_with model: @user, url: user_path(@user.id), method: :patch do |f| %>
+<%= form_with(model: @user, local: true) do |f| %>
 
   <div class="user-name">Name</div>
     <%= f.text_field :name %>

@@ -27,7 +27,6 @@
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="/users">Users</a>
-                  <%= link_to 'Users', user_path(current_user.id) %>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="/books">Books</a>
@@ -55,6 +54,9 @@
     </header>
       <%= yield %>
   </body>
+  <footer>
+    <div class="fixed-bottom">CopyRight Infratop.inc</div>
+  </footer>
 
 </html>
 
