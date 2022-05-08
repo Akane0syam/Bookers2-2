@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
+
   def index
     @user = current_user
     @users = User.all
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-     @user = User.find(params[:id])
+    @user = User.find(params[:id])
     if @user = current_user
         render "edit"
     else
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(@user.id), notice: "You have updated user successfully."
     else
-      render :rdit
+      render :edit
     end
   end
 
@@ -42,4 +43,5 @@ class UsersController < ApplicationController
   def user_params
   	params.require(:user).permit(:name, :profile_image, :introduction)
   end
+
 end

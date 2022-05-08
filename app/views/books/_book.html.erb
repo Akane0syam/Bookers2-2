@@ -5,9 +5,7 @@
      <h2>User info</h2>
      <table class="table table-striped">
         <thead>
-        <% users.each do |user| %>
-          	<%= image_tag @user.get_profile_image(100,100) %>
-        <% end %>
+          <%= image_tag @user.get_profile_image(100,100) %>
           <tr>
             <th>name</th>
           	<th><%= @user.name %></th>
@@ -16,12 +14,10 @@
             <th>introduction</th>
             <th><%= @user.introduction %></th>
           </tr>
-          <tr>
-
-          <div class="row">
-            <%= link_to "user_edit", edit_user_path(@user) %>
-          </div>
         </thead>
+        <br>
+        <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary" do %><i class="fas fa-user-cog"></i>
+              <% end %>
 
     </table>
 
