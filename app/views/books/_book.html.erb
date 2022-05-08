@@ -3,6 +3,7 @@
     <div class="col-lg-3" >
 
      <h2>User info</h2>
+
      <table class="table table-striped">
         <thead>
           <%= image_tag @user.get_profile_image(100,100) %>
@@ -16,10 +17,10 @@
           </tr>
         </thead>
         <br>
-        <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary" do %><i class="fas fa-user-cog"></i>
-              <% end %>
-
     </table>
+        <% if @user.id == current_user.id %>
+          <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-sm btn-block " do %><i class="fas fa-user-cog"></i><% end %>
+        <% end %>
 
       <h2>New book</h2>
       <% if @book.errors.any? %>
@@ -39,6 +40,6 @@
 
             <br>
 
-          <%= f.submit 'Create Book' %>
+          <%= f.submit 'Create Book', class: "btn btn-success" %>
         <% end %>
     </div>
