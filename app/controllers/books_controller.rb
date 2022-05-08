@@ -12,7 +12,6 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to book_path(@book.id), notice: "You have created book successfully."
     else
-      @books = Book.all
       render :edit
     end
   end
