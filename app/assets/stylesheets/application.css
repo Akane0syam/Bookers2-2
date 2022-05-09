@@ -13,14 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ * :after, :before {
+    box-sizing: border-box;
+}
 
+user agent stylesheet
 div {
     display: block;
-}
-  .fixed-bottom {
-    margin-top: 0;
-    margin-bottom: 1px;
-    box-sizing: border-box;
 }
 body {
     margin: 0;
@@ -31,4 +30,13 @@ body {
     color: #212529;
     text-align: left;
     background-color: #fff;
+}
+.navbar-nav ml-auto{
+  text-align:right;
+}
+.errors {
+  color: red;
+}
+.notice{
+  color: green;
 }
