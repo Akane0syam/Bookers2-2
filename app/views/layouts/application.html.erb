@@ -32,7 +32,8 @@
                 </li>
               <% else %>
                 <li class="nav-item active">
-                  <a class="nav-link" href= / ><i class="fas fa-home"></i>Home</a>
+                  <%= link_to "Home", root_path, class: "text-light" %>
+                    <i class="fas fa-home text-light"></i>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href= /homes/about ><i class="fas fa-link"></i>About</a>
