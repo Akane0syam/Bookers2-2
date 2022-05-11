@@ -2533,7 +2533,7 @@ Failures:
        [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.36.0/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
        [36m# ./spec/system/03_finishing_touches_spec.rb:424:in `block (4 levels) in <main>'[0m
 
-Finished in 15.93 seconds (files took 0.96322 seconds to load)
+Finished in 11.12 seconds (files took 1.28 seconds to load)
 [31m199 examples, 180 failures[0m
 
 Failed examples:

@@ -9,54 +9,64 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <header>
-      <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href= / >Bookers</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-          <div class="d-flex justify-content-end collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <span>Bookers</span>
+
+
+          <div class="navbar-collapse collapse show" id="navbarNavDropdown"  >
+            <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-                <li class="nav-item active">
-                  <a class="nav-link" href= /books ><i class="fas fa-home"></i>Home</a>
+                <li>
+                  <a class="nav-link" href="/books" ><i class="fas fa-home"></i>Home</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href= /users ><i class="fas fa-users"></i>Users</a>
+                <li>
+                  <a class="nav-link" href="/users" ><i class="fas fa-users"></i>Users</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href= /books ><i class="fas fa-book-open"></i>Books</a>
+                <li>
+                  <a class="nav-link" href="/books" ><i class="fas fa-book-open"></i>Books</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href=  /users/sign_out ><i class="fas fa-sign-out-alt"></i>Log out</a>
+                <li>
+                  <a class="nav-link" href="/users/sign_out" ><i class="fas fa-sign-out-alt"></i>Log out</a>
                 </li>
               <% else %>
-                <li class="nav-item active">
-                  <%= link_to "Home", root_path, class: "text-light" %>
-                    <i class="fas fa-home text-light"></i>
+                <li>
+                  <%= link_to root_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-home"></i> Home
+                  <% end %>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href= /homes/about ><i class="fas fa-link"></i>About</a>
+                <li>
+                  <%= link_to about_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-link"></i> About
+                  <% end %>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href= /users/sign_up ><i class="fas fa-user-plus"></i>Sign up</a>
+                <li>
+                  <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-user-plus"></i> Sign up
+                  <% end %>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href= /users/sign_in ><i class="fas fa-sign-in-alt"></i>Log in</a>
+                <li>
+                  <%= link_to new_user_session_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-sign-in-alt"></i> Log in
+                  <% end %>
                 </li>
               <% end %>
             </ul>
           </div>
+        </div>
       </nav>
     </header>
     <p id="notice">
-     <%=  notice %>
+     <%= notice %>
     </p>
-      <%= yield %>
-  </body>
+    <%= yield %>
+
   <footer>
     <div class="fixed-bottom">CopyRight Infratop.inc</div>
   </footer>
-
+  </body>
 </html>
 
