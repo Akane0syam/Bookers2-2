@@ -13,10 +13,9 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-
+          <%= link_to root_path, class: "navbar-brand" do %>
             <span>Bookers</span>
-
-
+          <% end %>
           <div class="navbar-collapse collapse show" id="navbarNavDropdown"  >
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
