@@ -17,12 +17,10 @@
               </td>
               <td><%=link_to @book.title %></td>
               <td><%= @book.body %></td>
+              <% if @book.user == current_user %>
               <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-success" %></td>
-              <td>
-                <% if @book.user == current_user %>
-                  <%= link_to "Destroy", @book, method: :delete, data: { confirm: '本当に消しますか?' }, class: "btn btn-danger" %>
-                <% end %>
-              </td>
+              <td><%= link_to "Destroy", @book, method: :delete, data: { confirm: '本当に消しますか?' }, class: "btn btn-danger" %></td>
+              <% end %>
             </tr>
         </tbody>
       </table>

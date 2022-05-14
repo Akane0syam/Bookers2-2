@@ -15,10 +15,11 @@ class UsersController < ApplicationController
     @books = Book.all
   end
 
+
   def edit
     @user = User.find(params[:id])
     if @user == current_user
-        render "edit"
+      render :edit
     else
       redirect_to user_path(current_user)
     end
@@ -28,8 +29,6 @@ class UsersController < ApplicationController
     @user = User.index(user_params)
     if @user.save
       redirect_to root_path, success: 'Welcome! You have signed up successfully.'
-    else
-      flash.now[:danger] = "登録に失敗しました"
     end
   end
 
