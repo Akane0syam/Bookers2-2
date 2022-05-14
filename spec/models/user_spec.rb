@@ -5,7 +5,7 @@ RSpec.describe 'Userモデルのテスト', type: :model do
     subject { user.valid? }
 
     let!(:other_user) { create(:user) }
-    let(:user) { build(:user) }
+    let!(:user) { build(:user) }
 
     context 'nameカラム' do
       it '空欄でないこと' do
