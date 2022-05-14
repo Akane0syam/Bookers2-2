@@ -11,7 +11,6 @@ describe '[STEP1] ユーザログイン前のテスト' do
         expect(current_path).to eq '/'
       end
       it 'Log inリンクが表示される: 青色のボタンの表示が「Log in」である' do
-        binding.pry
         log_in_link = find_all('a')[5].native.inner_text
         expect(log_in_link).to match(/Log in/)
       end

@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-
-
   def index
     @user = current_user
     @users = User.all
@@ -26,6 +24,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def create
+    @user = User.index(user_params)
+    if @user.save
+      redirect_to root_path, success: 'Welcome! You have signed up successfully.'
+    else
+      flash.now[:danger] = "登録に失敗しました"
+    end
+  end
+
 
 
   def update
@@ -37,7 +44,10 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def destroy
+    reset_session
+    redirect_to root_path, notice: 'Signed out successfully.'
+  end
 
   private
 

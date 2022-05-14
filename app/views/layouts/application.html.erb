@@ -20,16 +20,24 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <a class="nav-link" href="/books" ><i class="fas fa-home"></i>Home</a>
+                  <%= link_to root_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-home"></i> Home
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link" href="/users" ><i class="fas fa-users"></i>Users</a>
+                  <%= link_to users_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-users"></i> Users
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link" href="/books" ><i class="fas fa-book-open"></i>Books</a>
+                  <%= link_to books_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-book-open"></i> Books
+                  <% end %>
                 </li>
                 <li>
-                  <a class="nav-link" href="/users/sign_out" ><i class="fas fa-sign-out-alt"></i>Log out</a>
+                  <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light" do %>
+                    <i class="fas fa-sign-out-alt"></i> Log out
+                  <% end %>
                 </li>
               <% else %>
                 <li>
@@ -64,7 +72,13 @@
     <%= yield %>
 
   <footer>
-    <div class="fixed-bottom">CopyRight Infratop.inc</div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="mx-auto">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </div>
   </footer>
   </body>
 </html>
