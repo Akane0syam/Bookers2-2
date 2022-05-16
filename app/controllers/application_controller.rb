@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     user_path(id: current_user)
   end
   def after_sign_out_path_for(resource)
-    about_path
+    root_path
   end
 
   add_flash_types :success, :info, :warning, :danger

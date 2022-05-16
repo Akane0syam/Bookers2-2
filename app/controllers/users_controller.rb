@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
+
     @user = current_user
     @users = User.all
     @book = Book.new
@@ -47,6 +48,8 @@ class UsersController < ApplicationController
     reset_session
     redirect_to root_path, notice: 'Signed out successfully.'
   end
+
+
 
   private
 
