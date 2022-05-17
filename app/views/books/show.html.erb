@@ -7,13 +7,13 @@
       <table class="table ">
         <tbody>
             <tr>
-              <td><a href="/users/id">
+              <td>
                 <% if @book.user.profile_image.attached? %>
                   <%= image_tag @book.user.profile_image, size: "100x100" %>
                 <% else %>
                   <%= image_tag 'no_image', size: "100x100" %>
                 <% end %><br>
-                <%= link_to "#{current_user.name}", user_path(:id) %>
+                <%= link_to @book.user.name, user_path(@book.user_id) %>
               </td>
               <td><%=link_to @book.title %></td>
               <td><%= @book.body %></td>
